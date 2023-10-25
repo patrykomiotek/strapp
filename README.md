@@ -5,6 +5,85 @@
 1. Next, rename any file to be a TypeScript file (e.g. `src/index.js` to `src/index.tsx`) and **restart your development server**!
 1. If you have problems with linter try to remove `node_modules` and run `npm install`
 
+# Migrate to Vite
+
+1. Install dependencies `npm install --save-dev vite @vitejs/plugin-react vite-tsconfig-paths`
+2. Create Vite config file `vite.config.ts`:
+
+```ts
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import viteTsconfigPaths from "vite-tsconfig-paths";
+
+export default defineConfig({
+  // depending on your application, base can also be "/"
+  base: "",
+  plugins: [react(), viteTsconfigPaths()],
+  server: {
+    // this ensures that the browser opens upon server start
+    open: true,
+    // this sets a default port to 3000
+    port: 3000,
+  },
+});
+```
+
+3. Create a Vite Types File Reference
+   Create new file `vite-env.d.ts` in root directory with content:
+
+```
+/// <reference types="vite/client" />
+
+```
+
+4. Move the index.html File
+   Vite has a root directory which your files are served from. Since index.html is the entry point for Vite's server, the file needs to be in the root directory.
+
+From the public directory, move the index.html file to the root of your project. So move `index.html` from `public` to the root directory
+
+5. Update the index.html File
+
+Vite automatically resolves URLs inside index.html, so there's no need for %PUBLIC_URL% placeholders. You can do a search and replace inside your index.html file for this. Be sure to remove all occurrences.
+
+Add module script to the bottom of the body tag
+
+```html
+<body>
+  {/* others here */}
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+```
+
+6. Replace CRA with Vite
+
+```json
+{
+  "scripts": {
+    "start": "vite", // start dev server
+    "build": "tsc && vite build", // build for production
+    "preview": "vite preview" // locally preview production build
+  }
+},
+```
+
+Update tsconfig.json
+Here, your focus should be on the isolatedModules, lib, target, and types. For more options, here is a sample tsconfig file from Vite.
+
+```json
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ESNext",
+    "types": ["vite/client"],
+    "isolatedModules": true
+  }
+}
+```
+
+You can now remove CRA, add Vite scripts to the package.json file, and update tsconfig.json.
+
+7. Replace extension from `jsx` to `tsx`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

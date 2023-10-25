@@ -18,12 +18,17 @@ export const DisplayBooks = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
+  if (!data) return <p>No data</p>;
 
-  return data?.books.map(({ id, title, author }) => (
-    <div key={id}>
-      <h3>{title}</h3>
-      <b>{author}</b>
-      <br />
+  return (
+    <div>
+      {data.books.map(({ id, title, author }) => (
+        <div key={id}>
+          <h3>{title}</h3>
+          <b>{author}</b>
+          <br />
+        </div>
+      ))}
     </div>
-  ));
+  );
 };
