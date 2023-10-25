@@ -13,19 +13,19 @@ import { onError } from "@apollo/client/link/error";
 import "./index.css";
 import App from "./App";
 
-const errorLink = onError(({ graphqlErrors, networkError }) => {
-  if (graphqlErrors) {
-    // eslint-disable-next-line array-callback-return
-    graphqlErrors.map(({ message, location, path }) => {
-      console.error(`GraphQL error: ${path}, ${location}, ${message}`);
-    });
-  }
-  if (networkError) {
-    console.log("Network error");
-  }
-});
+// const errorLink = onError(({ graphqlErrors, networkError }) => {
+//   if (graphqlErrors) {
+//     // eslint-disable-next-line array-callback-return
+//     graphqlErrors.map(({ message, location, path }) => {
+//       console.error(`GraphQL error: ${path}, ${location}, ${message}`);
+//     });
+//   }
+//   if (networkError) {
+//     console.log("Network error");
+//   }
+// });
 const link = from([
-  errorLink,
+  // errorLink,
   new HttpLink({
     // uri: "https://flyby-router-demo.herokuapp.com/",
     uri: "http://localhost:4000",
