@@ -1,8 +1,0 @@
-query {
-  locations {
-    id
-    name
-    description
-    photo
-  }
-}
