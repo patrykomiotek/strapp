@@ -15,6 +15,7 @@ import App from "./App";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
+    // eslint-disable-next-line array-callback-return
     graphqlErrors.map(({ message, location, path }) => {
       console.error(`GraphQL error: ${path}, ${location}, ${message}`);
     });
