@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React, { type MouseEventHandler, type ComponentProps } from "react";
 
 const colors = {
   emerald: "#2ecc71",
@@ -14,25 +14,28 @@ interface Props {
   color: Color;
   bgColor: Color;
   children: string;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  // onClick: MouseEventHandler<HTMLButtonElement>;
 }
+
+type ButtonProps = ComponentProps<'button'> & Props;
 
 export const Button = ({
   children,
   color = "clouds",
   bgColor = "midnight-blue",
   onClick,
-}: Props) => {
+  ...rest
+}: ButtonProps) => {
   return (
     <button
       style={{ color: colors[color], backgroundColor: colors[bgColor] }}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>
   );
 };
 
-{
-  /* <Button color="emerald" bgColor="midnight-blue">Click me</Button> */
-}
+{/* <Button color="emerald" bgColor="midnight-blue" type="">Click me</Button> */}
+
