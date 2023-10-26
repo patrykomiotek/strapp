@@ -70,9 +70,3 @@ export const RegistrationFormState = () => {
     </form>
   );
 };
-function unseCallback(
-  arg0: (event: any) => void,
-  arg1: never[]
-): React.FormEventHandler {
-  throw new Error("Function not implemented.");
-}
