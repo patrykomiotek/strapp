@@ -15,6 +15,10 @@ Warning: A component is changing an uncontrolled input to be controlled. This is
 
 Add `value` to html elements.
 
+# Strict mode
+
+In React 18 when using `useEffect` React mounts, unmounts and then mounts again component to check full flow. In React 17 unmount is silenced in console.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

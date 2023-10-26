@@ -19,3 +19,6 @@ ref: ForwardedRef<HTMLInputElement>
     </div>
   );
 });
+
+// Input.displayName = 'Input (forwardRef)';
+Input.displayName = 'forwardRef(Input)';
