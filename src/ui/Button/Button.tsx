@@ -9,6 +9,7 @@ const colors = {
 };
 
 type Color = keyof typeof colors;
+// ReturnType<typeof Label>
 
 interface Props {
   color: Color;
