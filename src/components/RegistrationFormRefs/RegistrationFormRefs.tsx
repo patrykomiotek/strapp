@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Button, Text } from "../../ui";
+import { Button, Text, Input } from "../../ui";
 
 interface State {
   email: string;
@@ -20,11 +20,18 @@ export const RegistrationFormRefs = () => {
 
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
-    console.log({
-      email: emailFieldRef?.current?.value,
-      password: passwordFieldRef?.current?.value,
-      language: languageFieldRef?.current?.value,
-    });
+
+    if (
+      emailFieldRef.current &&
+      passwordFieldRef.current &&
+      languageFieldRef.current
+    ) {
+      console.log({
+        email: emailFieldRef.current.value,
+        password: passwordFieldRef.current.value,
+        language: languageFieldRef.current.value,
+      });
+    }
   };
 
   return (
@@ -34,18 +41,9 @@ export const RegistrationFormRefs = () => {
           E-mail: {email}, Password: {password}
         </p> */}
       </div>
-      <div>
-        <label htmlFor="email">E-mail</label>
-        <input ref={emailFieldRef} id="email" type="email" />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input ref={passwordFieldRef} id="password" type="password" />
-      </div>
-      <div>
-        <label htmlFor="language">Language</label>
-        <input ref={languageFieldRef} id="language" />
-      </div>
+      <Input ref={emailFieldRef} label="E-mail" type="email" />
+      <Input ref={passwordFieldRef} label="Password" type="password" />
+      <Input ref={languageFieldRef} label="Language" />
       <Button type="submit">Submit</Button>
     </form>
   );
