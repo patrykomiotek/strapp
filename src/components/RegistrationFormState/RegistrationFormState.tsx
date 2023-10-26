@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEventHandler, useState } from "react";
 import { Button, Text } from "../../ui";
 
 export const RegistrationFormState = () => {
@@ -6,8 +6,17 @@ export const RegistrationFormState = () => {
   const [password, setPassword] = useState("");
   const [language, setLanguage] = useState("");
 
+  const handleSubmit: FormEventHandler = (event) => {
+    event.preventDefault();
+    console.log({
+      email,
+      password,
+      language,
+    });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <p>
           E-mail: {email}, Password: {password}
