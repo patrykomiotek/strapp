@@ -5,12 +5,14 @@ import { DisplayLocations } from "./components/DisplayLocations";
 import "./App.css";
 import { Generator } from "./components/Generator/Generator";
 import { RegistrationFormState } from "./components/RegistrationFormState";
+import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
 
 function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
-      <RegistrationFormState />
+      <RegistrationFormRefs />
+      {/* <RegistrationFormState /> */}
       {/* <Generator /> */}
       {/* <DisplayLocations />
       <DisplayBooks /> */}
