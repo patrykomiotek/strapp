@@ -7,20 +7,18 @@ import { RegistrationFormRefs } from "./components/RegistrationFormRefs/Registra
 import { ViewPort } from "./components/ViewPort/ViewPort";
 import { Counter } from "./components/Counter";
 import { Stepper } from "./components/Stepper";
-import { AuthContext } from "./components/Auth/AuthContext";
+import { AuthProvider } from "./components/Auth/AuthContext";
 import { AuthInfo } from "./components/Auth/AuthInfo";
 
 import "./App.css";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
-
   return (
     <div className="App">
       <h1>Start app</h1>
-      <AuthContext.Provider value={{ isLogged, setIsLogged }}>
+      <AuthProvider>
         <AuthInfo />
-      </AuthContext.Provider>
+      </AuthProvider>
       <Stepper />
       <Counter />
       <ViewPort />
