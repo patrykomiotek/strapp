@@ -66,7 +66,7 @@ export const RegistrationFormState = () => {
         <label htmlFor="language">Language</label>
         <input id="language" onChange={handleChange} value={language} />
       </div>
-      <Button onClick={() => null}>Submit</Button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 };
