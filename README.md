@@ -5,6 +5,16 @@
 1. Next, rename any file to be a TypeScript file (e.g. `src/index.js` to `src/index.tsx`) and **restart your development server**!
 1. If you have problems with linter try to remove `node_modules` and run `npm install`
 
+# Controlled components
+
+In case of error:
+
+```
+Warning: A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components input section form RegistrationForm@http://localhost:3000/static/js/main.chunk.js:350:73 div App ApolloProvider@http://localhost:3000/static/js/0.chunk.js:7857:16
+```
+
+Add `value` to html elements.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
