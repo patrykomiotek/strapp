@@ -7,6 +7,7 @@ import { RegistrationFormRefs } from "./components/RegistrationFormRefs/Registra
 import { ViewPort } from "./components/ViewPort/ViewPort";
 import { Counter } from "./components/Counter";
 import { Stepper } from "./components/Stepper";
+import { AuthInfo } from "./components/Auth/AuthInfo";
 
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
+      <AuthInfo />
       <Stepper />
       <Counter />
       <ViewPort />
