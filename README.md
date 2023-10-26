@@ -1,6 +1,6 @@
 # Adding TypeScript
 
-1. Create `tsconfig.json` file
+1. Create `tsconfig.json` file (it may be copied from modern create-react-app)
 1. Install dependencies: `npm install --save-dev typescript@4.9 @types/node@14 @types/react@17.0.2 @types/react-dom@17.0.2 @types/jest@24`
 1. Next, rename any file to be a TypeScript file (e.g. `src/index.js` to `src/index.tsx`) and **restart your development server**!
 1. If you have problems with linter try to remove `node_modules` and run `npm install`
