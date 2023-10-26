@@ -1,11 +1,18 @@
-import React, { createContext, useContext } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+} from "react";
 
 type AuthContextType = {
   isLogged: boolean;
+  setIsLogged: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AuthContext = createContext<AuthContextType>({
   isLogged: true,
+  setIsLogged: () => null,
 });
 
 // AuthContext.Consumer <--
