@@ -6,11 +6,13 @@ import "./App.css";
 import { Generator } from "./components/Generator/Generator";
 import { RegistrationFormState } from "./components/RegistrationFormState";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
+import { ViewPort } from "./components/ViewPort/ViewPort";
 
 function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
+      <ViewPort />
       <RegistrationFormRefs />
       {/* <RegistrationFormState /> */}
       {/* <Generator /> */}
