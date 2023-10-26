@@ -7,12 +7,6 @@ import React, {
 } from "react";
 import { Button, Text, Input } from "../../ui";
 
-interface State {
-  email: string;
-  password: string;
-  language: string;
-}
-
 export const RegistrationFormRefs = () => {
   const emailFieldRef = useRef<HTMLInputElement>(null);
   const passwordFieldRef = useRef<HTMLInputElement>(null);
