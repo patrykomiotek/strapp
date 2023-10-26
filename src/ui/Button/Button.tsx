@@ -17,7 +17,14 @@ interface Props {
   // onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-type ButtonProps = ComponentProps<'button'> & Props;
+// Pick
+// Omit
+// Required
+// Partial
+// Readonly
+
+// type ButtonProps = Required<Pick<ComponentProps<'button'>, 'type' | 'onClick'>> & Props;
+type ButtonProps = Pick<ComponentProps<'button'>, 'type' | 'onClick'> & Props;
 
 export const Button = ({
   children,
@@ -37,5 +44,5 @@ export const Button = ({
   );
 };
 
-{/* <Button color="emerald" bgColor="midnight-blue" type="">Click me</Button> */}
+{/* <Button color="emerald" bgColor="midnight-blue">Click me</Button> */}
 
