@@ -1,9 +1,4 @@
-import React, {
-  ChangeEventHandler,
-  FormEventHandler,
-  useCallback,
-  useState,
-} from "react";
+import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { Button, Text } from "../../ui";
 
 interface State {
@@ -45,9 +40,9 @@ export const RegistrationFormState = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <p>
+        <Text>
           E-mail: {email}, Password: {password}
-        </p>
+        </Text>
       </div>
       <div>
         <label htmlFor="email">E-mail</label>

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import React, { forwardRef, type ComponentPropsWithRef, Ref, ForwardedRef } from "react";
+import React, { forwardRef, type ComponentPropsWithRef, ForwardedRef } from "react";
 
 interface Props {
   label: string;

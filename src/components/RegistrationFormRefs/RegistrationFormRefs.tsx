@@ -1,5 +1,5 @@
 import React, { FormEventHandler, useRef, useEffect } from "react";
-import { Button, Text, Input } from "../../ui";
+import { Button, Input } from "../../ui";
 
 export const RegistrationFormRefs = () => {
   const emailFieldRef = useRef<HTMLInputElement>(null);

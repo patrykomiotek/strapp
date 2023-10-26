@@ -1,14 +1,14 @@
 import React from "react";
-import { DisplayBooks } from "./components/DisplayBooks";
-import { DisplayLocations } from "./components/DisplayLocations";
-
-import "./App.css";
-import { Generator } from "./components/Generator/Generator";
-import { RegistrationFormState } from "./components/RegistrationFormState";
+// import { DisplayBooks } from "./components/DisplayBooks";
+// import { DisplayLocations } from "./components/DisplayLocations";
+// import { Generator } from "./components/Generator/Generator";
+// import { RegistrationFormState } from "./components/RegistrationFormState";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
 import { ViewPort } from "./components/ViewPort/ViewPort";
 import { Counter } from "./components/Counter";
 import { Stepper } from "./components/Stepper";
+
+import "./App.css";
 
 function App() {
   return (

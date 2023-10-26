@@ -1,4 +1,4 @@
-import React, { type MouseEventHandler, type ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
 
 const colors = {
   emerald: "#2ecc71",
@@ -44,6 +44,3 @@ export const Button = ({
     </button>
   );
 };
-
-{/* <Button color="emerald" bgColor="midnight-blue">Click me</Button> */}
-
