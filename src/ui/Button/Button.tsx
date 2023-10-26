@@ -12,8 +12,8 @@ type Color = keyof typeof colors;
 // ReturnType<typeof Label>
 
 interface Props {
-  color: Color;
-  bgColor: Color;
+  color?: Color;
+  bgColor?: Color;
   children: string;
   // onClick: MouseEventHandler<HTMLButtonElement>;
 }

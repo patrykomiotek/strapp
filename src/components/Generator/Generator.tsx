@@ -12,9 +12,7 @@ export const Generator = () => {
   return (
     <div>
       <p>{id}</p>
-      <Button color="clouds" bgColor="midnight-blue" onClick={handleClick}>
-        Refresh
-      </Button>
+      <Button onClick={handleClick}>Refresh</Button>
     </div>
   );
 };
