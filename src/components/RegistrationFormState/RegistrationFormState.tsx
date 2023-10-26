@@ -1,10 +1,24 @@
-import React, { FormEventHandler, useState } from "react";
+import React, {
+  ChangeEventHandler,
+  FormEventHandler,
+  useCallback,
+  useState,
+} from "react";
 import { Button, Text } from "../../ui";
 
+interface State {
+  email: string;
+  password: string;
+  language: string;
+}
+
 export const RegistrationFormState = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [language, setLanguage] = useState("");
+  const [state, setState] = useState<State>({
+    email: "",
+    password: "",
+    language: "",
+  });
+  const { email, password, language } = state;
 
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
@@ -13,6 +27,19 @@ export const RegistrationFormState = () => {
       password,
       language,
     });
+  };
+
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const id = event.target.id;
+    const value = event.target.value;
+    setState({
+      ...state,
+      [id]: value,
+    });
+    // setState((currentState) => ({
+    //   ...currentState,
+    //   [id]: value,
+    // }));
   };
 
   return (
@@ -24,31 +51,28 @@ export const RegistrationFormState = () => {
       </div>
       <div>
         <label htmlFor="email">E-mail</label>
-        <input
-          id="email"
-          type="email"
-          onChange={(event) => setEmail(event.target.value)}
-          value={email}
-        />
+        <input id="email" type="email" onChange={handleChange} value={email} />
       </div>
       <div>
         <label htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
-          onChange={(event) => setPassword(event.target.value)}
+          onChange={handleChange}
           value={password}
         />
       </div>
       <div>
         <label htmlFor="language">Language</label>
-        <input
-          id="language"
-          onChange={(event) => setLanguage(event.target.value)}
-          value={language}
-        />
+        <input id="language" onChange={handleChange} value={language} />
       </div>
       <Button onClick={() => null}>Submit</Button>
     </form>
   );
 };
+function unseCallback(
+  arg0: (event: any) => void,
+  arg1: never[]
+): React.FormEventHandler {
+  throw new Error("Function not implemented.");
+}
