@@ -8,11 +8,13 @@ import { RegistrationFormState } from "./components/RegistrationFormState";
 import { RegistrationFormRefs } from "./components/RegistrationFormRefs/RegistrationFormRefs";
 import { ViewPort } from "./components/ViewPort/ViewPort";
 import { Counter } from "./components/Counter";
+import { Stepper } from "./components/Stepper";
 
 function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
+      <Stepper />
       <Counter />
       <ViewPort />
       <RegistrationFormRefs />
