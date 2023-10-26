@@ -9,9 +9,7 @@ export const AuthCredentials = () => {
     <div>
       <h3>Auth credentials</h3>
       <p>Is user logged: {context.isLogged ? "YES" : "NO"}</p>
-      <Button onClick={() => context.setIsLogged((value) => !value)}>
-        🔄 Toggle
-      </Button>
+      <Button onClick={() => context.toggle()}>🔄 Toggle</Button>
     </div>
   );
 };

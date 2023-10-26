@@ -1,14 +1,10 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import React, { createContext, useContext, useState } from "react";
 
 type AuthContextType = {
   isLogged: boolean;
-  setIsLogged: Dispatch<SetStateAction<boolean>>;
+  toggle: () => void;
+  logout: () => void;
+  login: () => void;
 };
 
 export const AuthContext = createContext<AuthContextType | null>(null);
@@ -26,8 +22,12 @@ export const useAuthContext = () => {
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLogged, setIsLogged] = useState(false);
 
+  const toggle = () => setIsLogged((value) => !value);
+  const logout = () => setIsLogged(false);
+  const login = () => setIsLogged(true);
+
   return (
-    <AuthContext.Provider value={{ isLogged, setIsLogged }}>
+    <AuthContext.Provider value={{ isLogged, toggle, logout, login }}>
       {children}
     </AuthContext.Provider>
   );
