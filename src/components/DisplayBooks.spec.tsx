@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { DisplayBooks } from "./DisplayBooks";
 import {
   ApolloClient,
@@ -9,7 +9,7 @@ import {
 } from "@apollo/client";
 
 describe("DisplayBooks component", () => {
-  it.skip("should display mocked data", () => {
+  it("should display mocked data", async () => {
     const cache = new InMemoryCache();
 
     const link = new HttpLink({
@@ -32,5 +32,8 @@ describe("DisplayBooks component", () => {
         <DisplayBooks />
       </ApolloProvider>
     );
+    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+
+    expect(await screen.findByText(/again/i)).toBeInTheDocument();
   });
 });
