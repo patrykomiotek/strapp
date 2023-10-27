@@ -1,6 +1,8 @@
 // import { Button } from './ui';
 // import { Button } from './ui/Button';
 
-export { Button } from "./Button";
-export { Text } from "./Text";
-export { Input } from "./Input";
+export * from "./Button";
+export * from "./Text";
+export * from "./Input";
+export * from "./Checkbox";
+export * from "./Table";
