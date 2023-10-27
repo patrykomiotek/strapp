@@ -7,9 +7,9 @@
     "node": "> 14.x"
   },
   "scripts": {
-    "start": "react-scripts start -o ",
-    "build": "react-scripts build",
-    "test": "react-scripts test --verbose",
+    "start": "craco start -o ",
+    "build": "craco build",
+    "test": "craco test --verbose",
     "coverage": "react-scripts test --coverage --watchAll=false --reporters=default --reporters=jest-junit",
     "eject": "react-scripts eject",
     "lint": "eslint src",
@@ -125,6 +125,7 @@
     "yup": "0.29.0"
   },
   "devDependencies": {
+    "@craco/craco": "^5.8.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -134,7 +135,6 @@
     "jest-cli": "^29.5.0",
     "jest-junit": "^16.0.0",
     "mutationobserver-shim": "^0.3.7",
-    "node-sass": "4.14.0",
     "prettier": "1.19.1",
     "sonarqube-scanner": "^2.8.2",
     "webpack-cli": "3.3.11",
