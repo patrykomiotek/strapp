@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
-      <DisplayBooks />
+      {/* <DisplayBooks /> */}
       <AuthProvider>
         <AuthInfo />
       </AuthProvider>
