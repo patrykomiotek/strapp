@@ -1,4 +1,5 @@
 jest.mock("../../hooks/useViewPort", () => ({
+  ...jest.requireActual("../../hooks/useViewPort"),
   useViewPort: jest.fn(),
 }));
 

@@ -12,6 +12,7 @@ import { onError } from "@apollo/client/link/error";
 
 import "./index.css";
 import App from "./App";
+import { worker } from "./mocks/browser";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -39,6 +40,12 @@ const client = new ApolloClient({
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 const root = document.getElementById("root");
+
+if (1 === 1) {
+  // `worker.start()` returns a Promise that resolves
+  // once the Service Worker is up and ready to intercept requests.
+  worker.start();
+}
 
 // root.render(
 render(

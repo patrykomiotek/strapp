@@ -11,11 +11,13 @@ import { AuthProvider } from "./components/Auth/AuthContext";
 import { AuthInfo } from "./components/Auth/AuthInfo";
 
 import "./App.css";
+import { DisplayBooks } from "./components/DisplayBooks";
 
 function App() {
   return (
     <div className="App">
       <h1>Start app</h1>
+      <DisplayBooks />
       <AuthProvider>
         <AuthInfo />
       </AuthProvider>

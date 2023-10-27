@@ -135,6 +135,7 @@
     "jest": "^24.9.0",
     "jest-cli": "^29.5.0",
     "jest-junit": "^16.0.0",
+    "msw": "^1.3.2",
     "mutationobserver-shim": "^0.3.7",
     "node-sass": "4.14.0",
     "prettier": "1.19.1",
@@ -160,5 +161,8 @@
   },
   "jest-junit": {
     "reportTestSuiteErrors": "true"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
