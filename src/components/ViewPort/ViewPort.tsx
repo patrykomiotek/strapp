@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useViewPort } from "../../hooks/useViewPort";
 
 export const ViewPort = () => {
   const size = useViewPort();
+  // const [newSize, setNewSize] = useState(size);
 
   return (
     <div>
