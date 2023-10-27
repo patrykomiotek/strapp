@@ -1,4 +1,4 @@
-import React, { type ComponentProps } from "react";
+import React, { ComponentProps } from "react";
 
 const colors = {
   emerald: "#2ecc71",
@@ -25,7 +25,7 @@ interface Props {
 // Readonly
 
 // type ButtonProps = Required<Pick<ComponentProps<'button'>, 'type' | 'onClick'>> & Props;
-type ButtonProps = Pick<ComponentProps<'button'>, 'type' | 'onClick'> & Props;
+type ButtonProps = Pick<ComponentProps<"button">, "type" | "onClick"> & Props;
 
 export const Button = ({
   children,
